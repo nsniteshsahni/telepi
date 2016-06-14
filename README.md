@@ -3,10 +3,12 @@ A simple,intuitive telegram bot made for interaction and data fetching from Rasp
 
 # Examples
 To interact with bot,you can reference following examples
+
 ```
 /hi
 ```
 To greet your device
+
 
 ```
 /wiki Delhi
