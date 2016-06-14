@@ -2,7 +2,7 @@
 A simple,intuitive telegram bot made for interaction and data fetching from Raspberry pi.Currently this ChatBot is hotsted on Microsoft Azure for prompt and lag free responses.You can access the demo @https://telegram.me/nsniteshsahni_bot 
 
 # Examples
-To interact with bot,you can use following commands till date
+To interact with bot,you can reference following examples
 ```
 /hi
 ```
