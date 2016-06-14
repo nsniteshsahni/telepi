@@ -16,10 +16,10 @@ sudo pip install telepot
 Now just simply run bot.py and attach it to startup process for uninterrupted operation
 
 # API Reference
-1.Wikipedia for data fetching
-2.OpenWeatherMaps for weather details
-3.GPIO Library for python
-4.Telegram API for bot
+1. Wikipedia for data fetching
+2. OpenWeatherMaps for weather details
+3. GPIO Library for python
+4. Telegram API for bot
 
 # License
 The MIT License (MIT)
