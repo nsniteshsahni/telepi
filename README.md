@@ -1,5 +1,5 @@
 # telepy
-A simple,intuitive telegram bot made for interaction and data fetching from Raspberry pi.Currently this ChatBot is hotsted on Microsoft Azure for prompt and lag free responses.You can access the demo @ telegram.me/nsniteshsahni_bot 
+A simple,intuitive telegram bot made for interaction and data fetching from Raspberry pi.Currently this ChatBot is hotsted on Microsoft Azure for prompt and lag free responses.You can access the demo @ https://telegram.me/nsniteshsahni_bot 
 
 # Requirements  
 This bot requires following Python librarires:
