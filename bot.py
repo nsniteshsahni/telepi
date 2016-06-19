@@ -6,7 +6,7 @@ import telepot
 import wikipedia
 import json
 
-api = '6d93d0e4608c561b117bcc41a860d938'  # API Key for OpenWaetherMap 
+api = ''  # API Key for OpenWaetherMap 
 owm = pyowm.OWM(api)
 forecast = owm.daily_forecast("Delhi,in") # Weather forecast details
 tomorrow = pyowm.timeutils.tomorrow()
@@ -37,7 +37,8 @@ def handle(msg):
 
 # Here is the Telegram Bot API key
 
-bot = telepot.Bot('228758380:AAELxfbRv-nlJXCV_L9hP6zEHwAFf1bm040')
+key = '' # API key for telegram bot
+bot = telepot.Bot(key) 
 bot.message_loop(handle) # Calling bot and keeping it active infinitely
 print ('I am listening ...')
 
