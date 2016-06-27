@@ -15,6 +15,11 @@ To greet your device
 ```
 It will perform a wikipedia search and retunrs the relevant data without any clutter
 
+```
+/torrent <magnet link/torrent URL/info hash>
+```
+Adds and downloads torrent remotely toy your device.Uses deluge torrent client as backend.
+Visit above bot URL for more interesting features and commands.
 # Requirements  
 This bot requires following Python librarires:
 - Wikipedia
@@ -26,7 +31,9 @@ This bot requires following Python librarires:
 sudo pip install wikipedia
 sudo pip install pyowm
 sudo pip install telepot
+sudo apt-get install deluge
 ```
+Install deluge torrent client fore torrent downloading feature.
 Now just simply run bot.py and attach it to startup process for uninterrupted operation
 
 # API Reference
@@ -34,6 +41,7 @@ Now just simply run bot.py and attach it to startup process for uninterrupted op
 2. OpenWeatherMaps for weather details
 3. GPIO Library for python
 4. Telegram API for bot
+5. Deluge Console API for remote torrent downloading
 
 # License
 The MIT License (MIT)
