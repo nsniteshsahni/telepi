@@ -6,7 +6,7 @@ import telepot
 import wikipedia
 import json
 import os
-
+from pyshorteners import Shortener
 api = ''  # API Key for OpenWaetherMap 
 owm = pyowm.OWM(api)
 forecast = owm.daily_forecast("Delhi,in") # Weather forecast details
@@ -32,7 +32,7 @@ def handle(msg):
         ny = wikipedia.summary(command[5:len(str(command))],sentences = 7)
         bot.sendMessage(chat_id,ny)
     elif command == '/help' :
-        bot.sendMessage(chat_id,"List of supported commands is \n/hi - Greet Your Device\n/roll - Rolls a dice\n/weather - Tells detailed current weather report of Raspberry Pi's location\n/time - Tells current date and time\n/wiki <Topic Name> - Does a topic search on wikipedia and gives a summary of the topic.Try long tapping /wiki in autofill\n/torrent <magnet link/torrent url/infohash> - Adds and downloads torrent to your raspberry pi remotely.\n/torrent_status - Give the detailed status of your torrent(s) you have added/downloaded\n\nSee your autofill for quick selection of command or tap '/' icon on right side of your chat textbox")
+        bot.sendMessage(chat_id,"List of supported commands is \n/hi - Greet Your Device\n/roll - Rolls a dice\n/weather - Tells detailed current weather report of Raspberry Pi's location\n/time - Tells current date and time\n/wiki <Topic Name> - Does a topic search on wikipedia and gives a summary of the topic.Try long tapping /wiki in autofill\n/torrent <magnet link/torrent url/infohash> - Adds and downloads torrent to your raspberry pi remotely.\n/torrent_status - Give the detailed status of your torrent(s) you have added/downloaded\n/url <URL> - Shorten the given URL using goo.gl API\n/url_exp <Shortened URL> - Expands the shortened URL made by goo.gl\n\n See your autofill for quick selection of command or tap '/' icon on right side of your chat textbox")
     elif '/torrent ' in command :
         os.system("deluge-console add Desktop "+command[8:len(str(command))])
         bot.sendMessage(chat_id,"Torrent Successfully added")  
@@ -41,6 +41,12 @@ def handle(msg):
         q = p.read()
         bot.sendMessage(chat_id,str(q))
         p.close()
+     elif '/url ' in command :
+        url = str(command[5:len(command)])
+        bot.sendMessage(chat_id,"Shortened URL is\n" + str(shortener.short(url)))
+    elif '/url_exp ' in command:
+        url = str(command[9:len(command)])
+        bot.sendMessage(chat_id,"Expanded URL is\n" + shortener.expand(url))
     else :
         bot.sendMessage(chat_id,"Type /help for list of supported commands till now,There are many more to come!!")
 
