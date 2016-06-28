@@ -18,7 +18,7 @@ It will perform a wikipedia search and retunrs the relevant data without any clu
 ```
 /torrent <magnet link/torrent URL/info hash>
 ```
-Adds and downloads torrent remotely toy your device.Uses deluge torrent client as backend.
+Adds and downloads torrent remotely to your device.Uses deluge torrent client as backend.
 Visit above bot URL for more interesting features and commands.
 # Requirements  
 This bot requires following Python librarires:
@@ -40,7 +40,7 @@ sudo pip install bs4
 sudo pip install requests
 sudo apt-get install deluge
 ```
-Install deluge torrent client fore torrent downloading feature.
+Install deluge torrent client for remote torrent downloading feature.
 Now just simply run bot.py and attach it to startup process for uninterrupted operation
 
 #List of features
