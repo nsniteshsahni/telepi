@@ -62,9 +62,13 @@ For Commands with parameters,you can long tap the autosuggestion for quick typin
         url = str(command[9:len(command)])
         bot.sendMessage(chat_id,"Expanded URL is\n" + shortener.expand(url))
     elif command == '/speedtest':
-        bot.sendMessage(chat_id,"Wait for a while until we check and measure speed of system's network....")
+        bot.sendMessage(chat_id,"""Wait for a while until we check and measure speed of system's network.
+If result does'nt come in 30 seconds,Try again.Little patience is appreciated...""")
         p = str(subprocess.check_output(["speedtest-cli"]))
-        bot.sendMessage(chat_id,p[2:len(p)-1])
+        q = p[2:len(p)-1]
+        r = q.replace("\\r","")
+        s = r.split("\\n")
+        bot.sendMessage(chat_id,'\n'.join(s))
     else :
         bot.sendMessage(chat_id,"Type /help for list of supported commands till now,There are many more to come!!")
 
