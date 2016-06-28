@@ -25,6 +25,8 @@ This bot requires following Python librarires:
 - Wikipedia
 - OpenWeatherMap
 - Python wrapper class for telegram
+- Deluge torrent client
+- Speedtest cli
 
 # Installation
 ```
@@ -32,10 +34,19 @@ sudo pip install wikipedia
 sudo pip install pyowm
 sudo pip install telepot
 sudo pip install pyshorteners
+sudo pip install speedtest-cli
 sudo apt-get install deluge
 ```
 Install deluge torrent client fore torrent downloading feature.
 Now just simply run bot.py and attach it to startup process for uninterrupted operation
+
+#List of features
+1. Weather Status
+2. Torrent Downloading
+3. Wikipedia Search
+4. Network  Speedtest
+
+And other auxiliary features
 
 # API Reference
 1. Wikipedia for data fetching
