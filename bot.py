@@ -12,6 +12,7 @@ import bs4
 import requests
 
 api = ''  # API Key for OpenWaetherMap 
+api_key = '' #API key for Google(Url shortening) 
 owm = pyowm.OWM(api)
 forecast = owm.daily_forecast("Delhi,in") # Weather forecast details
 tomorrow = pyowm.timeutils.tomorrow()
