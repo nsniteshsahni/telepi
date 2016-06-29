@@ -26,6 +26,7 @@ This bot requires following Python librarires:
 - Python wrapper class for telegram
 - Deluge torrent client
 - Speedtest cli
+- youtube_dl
 - Beautiful Soup
 
 # Installation
@@ -37,17 +38,20 @@ sudo pip install pyshorteners
 sudo pip install speedtest-cli
 sudo pip install bs4
 sudo pip install requests
+sudo pip install youtube-dl
 sudo apt-get install deluge
 ```
 Install deluge torrent client for remote torrent downloading feature.
 Now just simply run bot.py and attach it to startup process for uninterrupted operation
 
 #List of features
-1. Weather Status
-2. Torrent Downloading
-3. Wikipedia Search
-4. Network  Speedtest
-5. Google News Headlines
+1. Weather status
+2. Torrent downloading
+3. Torrent status tracking
+4. Wikipedia search
+5. Network speedtest
+6. Download youtube videos
+7. Google news headlines
 
 And other auxiliary features
 
@@ -59,6 +63,7 @@ And other auxiliary features
 5. Google API for URL Shortening
 6. Beautiful soup for web parsing
 7. Deluge Console API for remote torrent downloading
+8. Youtube python library
 
 # License
 The MIT License (MIT)
