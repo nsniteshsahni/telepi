@@ -10,6 +10,7 @@ from pyshorteners import Shortener
 import subprocess
 import bs4
 import requests
+import youtube_dl
 
 api = ''  # API Key for OpenWaetherMap 
 api_key = '' #API key for Google(Url shortening) 
@@ -53,9 +54,10 @@ def handle(msg):
 /url <URL> - Shorten the given URL using Google API(goo.gl).\n
 /url_exp <Shortened URL> - Expands the given shortened url made using Google API\n
 /speedtest - Does a detailed network speed test using ookla's speedtest API\n
+/yt <Youtube video link> - Creates the shortened download link for given youtube video\n
 /news <Topic> - Displays top 10 latest headlines fetched by Google News API about given toipc using Beautiful soup py Library.
 \n\nSee your autofill for quick selection of command or tap '/' icon on right side of your chat textbox.\n
-For Commands with parameters,you can long tap the autosuggestion for quick typing.""")
+For Commands with parameters,you can long tap the autosuggestion for quick typing and type your parameter followed by a space.""")
     
     elif '/torrent ' in command :
         os.system("deluge-console add Desktop "+command[8:len(str(command))])
@@ -119,6 +121,24 @@ If result does'nt come in 30 seconds,Try again.Little patience is appreciated...
         titles = titles.split('u"')
         bot.sendMessage(chat_id, "Top 10 latest news headlines for the given topic are\n"+ "\n\n->".join(map(str,titles)))
 
+    elif '/yt ' in command :
+        bot.sendMessage(chat_id,"Wait until we create the download link,Sitback and relax..")
+        url = command[4:len(command)]
+        ydl = youtube_dl.YoutubeDL({'outtmpl': '%(id)s%(ext)s'})
+
+        with ydl:
+             result = ydl.extract_info(url,download=False) # We just need the info
+
+        if 'entries' in result:
+          # Can be a playlist or a list of videos
+          video = result['entries'][0]
+        else:
+           # Just a video
+           video = result
+           video_url = video['url']
+           p = shortener.short(video_url)
+           bot.sendMessage(chat_id,"Download link for given youtube video is:\n" + p)
+
     else :
         bot.sendMessage(chat_id,"Type /help for list of supported commands till now,There are many more to come!!")
 
@@ -131,3 +151,4 @@ print ('I am listening ...')
 
 while 1:
     time.sleep(10)
+    
