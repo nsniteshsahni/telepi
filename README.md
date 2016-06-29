@@ -2,7 +2,7 @@
 A simple,intuitive telegram bot made for interaction and data fetching from Raspberry pi.Currently this ChatBot is hotsted on Microsoft Azure for prompt and lag free responses.You can access the demo @https://telegram.me/nsniteshsahni_bot 
 
 # Examples
-To interact with bot,you can reference following examples
+To interact with bot,you can reference the following examples
 
 ```
 /hi
@@ -13,8 +13,7 @@ To greet your device
 ```
 /wiki Delhi
 ```
-It will perform a wikipedia search and retunrs the relevant data without any clutter
-
+It will perform a wikipedia search and returns the relevant data without any clutter
 ```
 /torrent <magnet link/torrent URL/info hash>
 ```
