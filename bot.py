@@ -117,7 +117,11 @@ If result does'nt come in 30 seconds,Try again.Little patience is appreciated...
         titles = titles.replace("u'",'u"')
         titles = titles.split('u"')
         bot.sendMessage(chat_id, "Top 10 latest news headlines for the given topic are\n"+ "\n\n->".join(map(str,titles)))
-
+    
+    elif:'/cal ' in command
+        ans = eval(str(command[5:len(command)])) 
+        bot.sendMessage(chat_id,"Answer is\n" + ans)
+    
     else :
         bot.sendMessage(chat_id,"Type /help for list of supported commands till now,There are many more to come!!")
 
